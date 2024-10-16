@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      -name: Python Setup
+      - name: Python Setup
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
@@ -30,6 +30,6 @@ jobs:
           echo "${{ secrets.PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.KNOW_HOSTS }}" > ~/.ssh/known_hosts
 
-      - name: Deploy
-        run rsync --archive --stats site/ ${{ secrets.REMOTE_DEST }}
+      # - name: Deploy
+      #   # run rsync --archive --stats site/ ${{ secrets.REMOTE_DEST }}
 
